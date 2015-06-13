@@ -1,0 +1,496 @@
+﻿@model MvcApplication1.Models.User
+           @using MvcApplication1.Models
+<!DOCTYPE html>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    
+}
+<html class="no-js" lang="en">
+
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8" />
+
+    <title>Studio Francesca - Premium Theme by WowThemesNet</title>
+    <!-- CSS Files-->
+    @*<link rel="stylesheet" href="stylesheets/style.css">*@
+    <link href="~/Content/style.css" rel="stylesheet" />
+  
+    @*<link rel="stylesheet" href="stylesheets/skins/blue.css">*@
+    <link href="~/Content/skins/blue.css" rel="stylesheet" />
+    <!-- skin color -->
+    @*<link rel="stylesheet" href="stylesheets/responsive.css">*@
+    <link href="~/Content/responsive.css" rel="stylesheet" />
+    <!-- IE Fix for HTML5 Tags -->
+    <!--[if lt IE 9]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+      <![endif]-->
+</head>
+<body>
+
+    <div id="ei-slider" class="ei-slider">
+        <ul class="ei-slider-large">
+            <li>
+                <img src="~/images/Instrument pic.jpg"  width=" 345" height="173" alt="image01" class="responsiveslide">
+                <div class="ei-title">
+                    <h3>Quality</h3>
+                    <h2>Instruments</h2>
+                </div>
+            </li>
+            <li>
+                
+                <img src="~/images/3.JPG" alt="image02" class="responsiveslide">
+                <div class="ei-title">
+                    <h3>Surgical</h3>
+                    <h2>Instruments</h2>
+                </div>
+            </li>
+            <li>
+                
+                <img src="~/images/dental-instruments-h.jpg" alt="image03" class="responsiveslide">
+                <div class="ei-title">
+                    <h3>Dental</h3>
+                    <h2>Instruments</h2>
+                </div>
+            </li>
+            <li>
+                <img src="~/images/banner3.jpg" alt="image04" class="responsiveslide">
+                <div class="ei-title">
+                    <h3>Beauty</h3>
+                    <h2>Instruments</h2>
+                </div>
+            </li>
+            <li>
+                <img src="~/images/orthopedic-surgery-joint-surgery-instrument-kit-78958-8233060.jpg" alt="image05" class="responsiveslide">
+                <div class="ei-title">
+                    <h3>Veterinary</h3>
+                    <h2>Instruments</h2>
+                </div>
+            </li>
+            <li>
+                <img src="~/images/Rigid-HD-Sinuscope__WA96206A_001_V1_20090121_buehne_980x300.jpg" alt="image06" class="responsiveslide">
+                <div class="ei-title">
+                    <h3>Jewelery and</h3>
+                    <h2>Fishing Tools</h2>
+                </div>
+            </li>
+            <li>
+                <img src="~/images/Rigid-HD-Sinuscope__WA96203A_001_V1_20090121_buehne_980x300.jpg" alt="image07" class="responsiveslide">
+                <div class="ei-title">
+                    <h3>and</h3>
+                    <h2>Much More</h2>
+                </div>
+            </li>
+            <li>
+                
+                <img src="~/images/aa.jpg" alt="image08" class="responsiveslide">
+                <div class="ei-title">
+                    <h3>We sell </h3>
+                    <h2>Quality</h2>
+                </div>
+            </li>
+            @*<li>
+                                    <img src="" alt="image09" class="responsiveslide">
+                                    <div class="ei-title">
+                                        <h2>Dare to</h2>
+                                        <h3>Forgive</h3>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="http://placehold.it/1400x500/222" alt="image10" class="responsiveslide">
+                                    <div class="ei-title">
+                                        <h2>Stand up & </h2>
+                                        <h3>Live</h3>
+                                    </div>
+                                </li>*@
+                        </ul>
+                        <!-- slider-thumbs -->
+                        <ul class="ei-slider-thumbs">
+                            <li class="ei-slider-element">Current</li>
+                            <li><a href="#">Slide 1</a><img src="http://placehold.it/150x59/444"  /></li>
+                            <li><a href="#">Slide 2</a><img src="http://placehold.it/150x59/444"  /></li>
+                            <li><a href="#">Slide 3</a><img src="http://placehold.it/150x59/444"  /></li>
+                            <li><a href="#">Slide 4</a><img src="http://placehold.it/150x59/444"  /></li>
+                            <li><a href="#">Slide 5</a><img src="http://placehold.it/150x59/444"  /></li>
+                            <li><a href="#">Slide 6</a><img src="http://placehold.it/150x59/444"  /></li>
+                            <li><a href="#">Slide 7</a><img src="http://placehold.it/150x59/444"  /></li>
+                            <li><a href="#">Slide 8</a><img src="http://placehold.it/150x59/444"  /></li>
+                            @*<li><a href="#">Slide 9</a><img src="http://placehold.it/150x59/444" class="slideshowthumb" alt="thumb09" /></li>
+                                <li><a href="#">Slide 10</a><img src="http://placehold.it/150x59/444" class="slideshowthumb" alt="thumb10" /></li>*@
+                        </ul>
+                    </div>
+                    <div class="minipause">
+                    </div>
+
+                <div class="row">
+                    <div class="twelve columns" style="background-color:black">
+                        <ul class="ca-menu" >
+                            <li>
+                                <a href="@Url.Action("Surgical", "Home", new { Type="Surgical"})">
+                                    @*<span class="ca-icon" style="height:30px"><i class="fa fa-windows" ></i></span>*@
+            <div class="ca-content">
+                <h2 class="ca-main" style="color:white">Surgical<br />Instruments</h2>
+                @*<h3 class="ca-sub">Across all cities</h3>*@
+            </div>
+            </a>
+            </li>
+            <li>
+                <a href="@Url.Action("Surgical", "Home", new { Type="Dental"})">
+                    @*<span class="ca-icon"><i class="fa fa-laptop"></i></span>*@
+                    <div class="ca-content">
+                        <h2 class="ca-main" style="color:white">Dental<br />Instruments</h2>
+                        @*<h3 class="ca-sub">Across all cities</h3>*@
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="@Url.Action("Surgical", "Home", new { Type="Beauty"})">
+                    @*<span class="ca-icon"><i class="fa fa-upload"></i></span>*@
+                    <div class="ca-content">
+                        <h2 class="ca-main" style="color:white">Beauty<br />Instruments</h2>
+                        @*<h3 class="ca-sub">Across all cities</h3>*@
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="@Url.Action("Surgical", "Home", new { Type="Veterinary"})">
+                    @*<span class="ca-icon"><i class="fa fa-camera"></i></span>*@
+                    <div class="ca-content">
+                        <h2 class="ca-main" style="color:white">Veterinary<br />Instruments</h2>
+                        @*<h3 class="ca-sub">Free advertisement for Company based Products</h3>*@
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+    </div>
+
+    @*HEADER
+        ==================================================
+        <div class="row">
+            <div class="headerlogo four columns">
+                <div class="logo">
+                    <a href="Home">
+                        <h4>Technology World</h4>
+                    </a>
+                </div>
+            </div>
+            <div class="headermenu eight columns noleftmarg">
+                <nav id="nav-wrap">
+                    <ul id="main-menu" class="nav-bar sf-menu">
+                        <li class="current">
+                            @Html.ActionLink("Home","Index","Home")
+
+                        </li>
+                        <li>
+                            <a href="#">+Submit your Add</a>
+                            @*<ul>
+                                <li><a href="portofolio2.html">2 Columns</a></li>
+                                <li><a href="portofolio3.html">3 Columns</a></li>
+                                <li><a href="portofolio4.html">4 Columns</a></li>
+                                <li><a href="portofoliodetail.html">Project Details</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">About Us</a>
+                            @*<ul>
+                                <li><a href="blogpage1.html">Blog page style 1</a></li>
+                                <li><a href="blogpage2.html">Blog page style 2</a></li>
+                                <li><a href="blogpage3.html">Blog page style 3</a></li>
+                                <li><a href="blogsinglepost.html">Single post</a></li>
+                            </ul>
+                        </li>
+                        @*<li>
+                            <a href="#">Pages</a>
+                            <ul>
+                                <li><a href="about.html">About us</a></li>
+                                <li><a href="services.html">Services</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">Features</a>
+                            <ul>
+                                <li><a href="columns.html">Columns</a></li>
+                                <li><a href="elements.html">Elements</a></li>
+                                <li><a href="typography.html">Typography</a></li>
+                            </ul>
+                        </li>
+                        @*<li>
+                            <a href="contact.html">Contact</a>
+                        </li>
+                    @*</ul>
+                </nav>
+            </div>
+        </div>
+        <div class="clear">
+        </div>*@
+    <!-- SLIDER
+    ================================================== -->
+    @*<div id="ei-slider" class="ei-slider">
+        <ul class="ei-slider-large">
+            <li>
+                <img src="http://www.wowthemes.net/demo/studiofrancesca/images/slideshow/large/2.jpg" alt="image01" class="responsiveslide">
+                <div class="ei-title">
+                    <h2>Dare to</h2>
+                    <h3>Dream</h3>
+                </div>
+            </li>
+            <li>
+                <img src="images/Mask2.jpg" alt="image02" class="responsiveslide">
+                <div class="ei-title">
+                    <h2>Dare to</h2>
+                    <h3>Hope</h3>
+                </div>
+            </li>
+            <li>
+                <img src="images/a.jpg" alt="image03" class="responsiveslide">
+                <div class="ei-title">
+                    <h2>Dare to</h2>
+                    <h3>Smile</h3>
+                </div>
+            </li>
+            <li>
+                <img src="http://placehold.it/1400x500/222" alt="image04" class="responsiveslide">
+                <div class="ei-title">
+                    <h2>Dare to</h2>
+                    <h3>ask</h3>
+                </div>
+            </li>
+            <li>
+                <img src="http://placehold.it/1400x500/222" alt="image05" class="responsiveslide">
+                <div class="ei-title">
+                    <h2>Dare to</h2>
+                    <h3>refuse</h3>
+                </div>
+            </li>
+            <li>
+                <img src="http://placehold.it/1400x500/222" alt="image06" class="responsiveslide">
+                <div class="ei-title">
+                    <h2>Dare to</h2>
+                    <h3>give</h3>
+                </div>
+            </li>
+            <li>
+                <img src="http://placehold.it/1400x500/222" alt="image07" class="responsiveslide">
+                <div class="ei-title">
+                    <h2>Dare to</h2>
+                    <h3>receive</h3>
+                </div>
+            </li>
+            <li>
+                <img src="http://placehold.it/1400x500/222" alt="image08" class="responsiveslide">
+                <div class="ei-title">
+                    <h2>Dare to </h2>
+                    <h3>Love</h3>
+                </div>
+            </li>
+            <li>
+                <img src="http://placehold.it/1400x500/222" alt="image09" class="responsiveslide">
+                <div class="ei-title">
+                    <h2>Dare to</h2>
+                    <h3>Forgive</h3>
+                </div>
+            </li>
+            <li>
+                <img src="http://placehold.it/1400x500/222" alt="image10" class="responsiveslide">
+                <div class="ei-title">
+                    <h2>Stand up & </h2>
+                    <h3>Live</h3>
+                </div>
+            </li>
+        </ul>*@
+    <!-- slider-thumbs -->
+    @*<ul class="ei-slider-thumbs">
+                <li class="ei-slider-element">Current</li>
+                <li><a href="#">Slide 1</a><img src="http://placehold.it/150x59/444" class="slideshowthumb" alt="thumb01" /></li>
+                <li><a href="#">Slide 2</a><img src="http://placehold.it/150x59/444" class="slideshowthumb" alt="thumb02" /></li>
+                <li><a href="#">Slide 3</a><img src="http://placehold.it/150x59/444" class="slideshowthumb" alt="thumb03" /></li>
+                <li><a href="#">Slide 4</a><img src="http://placehold.it/150x59/444" class="slideshowthumb" alt="thumb04" /></li>
+                <li><a href="#">Slide 5</a><img src="http://placehold.it/150x59/444" class="slideshowthumb" alt="thumb05" /></li>
+                <li><a href="#">Slide 6</a><img src="http://placehold.it/150x59/444" class="slideshowthumb" alt="thumb06" /></li>
+                <li><a href="#">Slide 7</a><img src="http://placehold.it/150x59/444" class="slideshowthumb" alt="thumb07" /></li>
+                <li><a href="#">Slide 8</a><img src="http://placehold.it/150x59/444" class="slideshowthumb" alt="thumb08" /></li>
+                <li><a href="#">Slide 9</a><img src="http://placehold.it/150x59/444" class="slideshowthumb" alt="thumb09" /></li>
+                <li><a href="#">Slide 10</a><img src="http://placehold.it/150x59/444" class="slideshowthumb" alt="thumb10" /></li>
+            </ul>
+        </div>
+        <div class="minipause">
+        </div>*@
+    <!-- SUBHEADER
+    ================================================== -->
+    @*<div id="subheader">
+            <div class="row">
+
+                <div class="twelve columns">
+                    <p class="text-center">
+                        "Vision is the art of seeing what is invisible to others" - Jonathan Swift
+                    </p>
+                </div>
+            </div>
+        </div>*@
+    <!-- ANIMATED COLUMNS
+    ================================================== -->
+    @*<div class="row">
+            <div class="twelve columns">
+                <ul class="ca-menu">
+                    <li>
+                        <a href="#">
+                            @*<span class="ca-icon" style="height:30px"><i class="fa fa-windows" ></i></span>
+                            <div class="ca-content">
+                                <h2 class="ca-main">Mobiles<br /> Tablets</h2>
+                                <h3 class="ca-sub">Across all cities</h3>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="ca-icon"><i class="fa fa-laptop"></i></span>
+                            <div class="ca-content">
+                                <h2 class="ca-main">Laptops<br /> Computers</h2>
+                                <h3 class="ca-sub">Across all cities</h3>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="ca-icon"><i class="fa fa-upload"></i></span>
+                            <div class="ca-content">
+                                <h2 class="ca-main">Networking <br /> Related Technology</h2>
+                                <h3 class="ca-sub">Across all cities</h3>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="ca-icon"><i class="fa fa-camera"></i></span>
+                            <div class="ca-content">
+                                <h2 class="ca-main">Advertise your<br /> Product</h2>
+                                <h3 class="ca-sub">Free advertisement for Company based Products</h3>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>*@
+    <!-- CONTENT
+        ================================================== -->
+    <div class="row">
+        <div class="twelve columns">
+            <div class="centersectiontitle">
+                <h4>Our Quality is our Recognization</h4>
+            </div>
+        </div>
+        <div class="twelve columns">
+            <h5>Our Products</h5>
+            <p>
+                WE ARE HAPPY TO PRESENT OUR WEBSITE OF SURGICAL, DENTAL, BEAUTY,  VETERINARY , JEWELRY & FISHING  INSTRUMENTS. WE HAVE IMPROVED IN ORDER TO MAKE IT SIMPLER AND EASIER TO FOLLOW. IT WOULD BE AN EXCELLENT GUIDE TO ALL OUR CUSTOMERS IN THE WORLD OVER.
+                <br />
+                WE ARE MANUFACTURER OF WIDE RANGE STAINLESS STEEL AND BRASS CHROME PLATED INSTRUMENTS. QUALITY OF OUR EACH INSTRUMENTS IS MADE TO EXACT SPECIFICATIONS. MUCH OF OUR TIME IS SPENT ASSURING THE QUALITY OF THE PRODUCTS WE SELL. OUR NAME DOES NOT GO ON ANY INSTRUMENT THAT FAILS TO PASS OUR TOUGH QUALITY ASSURANCE STANDARDS WE KNOW OUR REPUTATION DEPENDS ON PROVIDING A QUALITY PRODUCT THAT WILL PERFORM CONSTANTLY FOR YEARS.
+            </p>
+
+        </div>
+
+    </div>
+    <div class="hr">
+    </div>
+    <!-- TESTIMONIALS
+    ================================================== -->
+    @*<div class="row">
+        <div class="twelve columns">
+            <div id="testimonials">
+                <blockquote>
+                    <p>
+                        "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis." <cite>Martin - NY</cite>
+                    </p>
+                </blockquote>
+                <blockquote>
+                    <p>
+                        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco." <cite>Sandra - LA</cite>
+                    </p>
+                </blockquote>
+                <blockquote>
+                    <p>
+                        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco." <cite>Jason - MA</cite>
+                    </p>
+                </blockquote>
+            </div>*@
+    <!--end testimonials-->
+    @*</div>
+        </div>**@
+    <!-- FOOOTER
+    ================================================== -->
+    @*<div id="footer">
+            <footer class="row">
+                <p class="back-top floatright">
+                    <a href="#top"><span></span></a>
+                </p>
+                <div class="six columns">
+                    <h1>ABOUT US</h1>
+                    Provide our clients all the Technology they want
+                </div>
+                <div class="six columns">
+                    <h1>GET SOCIAL</h1>
+                    <a class="social facebook" href="#"></a>
+                    <a class="social twitter" href="#"></a>
+                    <a class="social deviantart" href="#"></a>
+                    <a class="social flickr" href="#"></a>
+                    <a class="social dribbble" href="#"></a>
+                </div>
+                <div class="four columns">
+                    <h1 class="newsmargin">NEWSLETTER</h1>
+                    <div class="row collapse newsletter floatright">
+                        <div class="ten mobile-three columns">
+                            <input type="text" class="nomargin" placeholder="Enter your e-mail address...">
+                        </div>
+                        <div class="two mobile-one columns">
+                            <a href="#" class="postfix button expand">GO</a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <div class="copyright">
+            <div class="row">
+                <div class="six columns">
+                    &copy;<span class="small"> MHR 19 Techologies</span>
+                </div>
+                <div class="six columns">
+                    <span class="small floatright">Design by <a target="_blank" href="http://www.wowthemes.net/premium-themes-templates/">Muhammad Hassan Riaz</a> </span>
+                </div>
+            </div>
+        </div>*@
+    <!-- JAVASCRIPTS
+    ================================================== -->
+    <!-- Javascript files placed here for faster loading -->
+    @*<script src="javascripts/foundation.min.js"></script>
+        <script src="javascripts/jquery.easing.1.3.js"></script>
+        <script src="javascripts/elasticslideshow.js"></script>
+        <script src="javascripts/jquery.carouFredSel-6.0.5-packed.js"></script>
+        <script src="javascripts/jquery.cycle.js"></script>
+        <script src="javascripts/app.js"></script>
+        <script src="javascripts/modernizr.foundation.js"></script>
+        <script src="javascripts/slidepanel.js"></script>
+        <script src="javascripts/scrolltotop.js"></script>
+        <script src="javascripts/hoverIntent.js"></script>
+        <script src="javascripts/superfish.js"></script>
+        <script src="javascripts/responsivemenu.js"></script>*@
+    <script src="~/Scripts/foundation.min.js"></script>
+    <script src="~/Scripts/jquery.easing.1.3.js"></script>
+
+    <script src="~/Scripts/elasticslideshow.js"></script>
+    <script src="~/Scripts/jquery.carouFredSel-6.0.5-packed.js"></script>
+    <script src="~/Scripts/jquery.cycle.js"></script>
+    <script src="~/Scripts/app.js"></script>
+    <script src="~/Scripts/modernizr.foundation.js"></script>
+    <script src="~/Scripts/slidepanel.js"></script>
+    <script src="~/Scripts/scrolltotop.js"></script>
+    <script src="~/Scripts/hoverIntent.js"></script>
+    <script src="~/Scripts/superfish.js"></script>
+    <script src="~/Scripts/responsivemenu.js"></script>
+</body>
+</html>

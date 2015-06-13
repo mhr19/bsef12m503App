@@ -1,0 +1,233 @@
+﻿@model MvcApplication1.Models.User
+
+@using MvcApplication1.Models
+
+<!DOCTYPE html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8" />
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width" />
+    <title>PARAMOUNT Surgical Trading Co.</title>
+    <link href="~/Content/style.css" rel="stylesheet" />
+    <link href="~/Content/responsive.css" rel="stylesheet" />
+    <link href="~/Content/skins/blue.css" rel="stylesheet" />
+    <link id="bs-css" href="~/Content/bootstrap-cerulean.min.css" rel="stylesheet">
+    <link href="~/Content/charisma-app.css" rel="stylesheet">
+    <link href='~/Content/fullcalendar.css' rel='stylesheet'>
+    <link href='~/Content/fullcalendar.print.css' rel='stylesheet' media='print'>
+    <link href='~/Content/chosen.min.css' rel='stylesheet'>
+    <link href='~/Content/colorbox.css' rel='stylesheet'>
+    <link href='~/Content/responsive-tables.css' rel='stylesheet'>
+    <link href='~/Content/bootstrap-tour.min.css' rel='stylesheet'>
+    <link href='~/Content/jquery.noty.css' rel='stylesheet'>
+    <link href='~/Content/noty_theme_default.css' rel='stylesheet'>
+    <link href='~/Content/elfinder.min.css' rel='stylesheet'>
+    <link href='~/Conent/elfinder.theme.css' rel='stylesheet'>
+    <link href='~/Content/jquery.iphone.toggle.css' rel='stylesheet'>
+    <link href='~/Content/uploadify.css' rel='stylesheet'>
+    <link href='~/Content/animate.min.css' rel='stylesheet'>
+    <!-- IE Fix for HTML5 Tags -->
+    <!--[if lt IE 9]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+      <![endif]-->
+
+    <script type="text/javascript" src="~/Scripts/countries.js"></script>
+
+</head>
+<body>
+
+    <div id="subheader">
+        <div class="row">
+            <div class="twelve columns">
+                <p class="left">
+                    Change what you want
+                </p>
+                <p class="right">
+                    <a href="~/Admin/Logout">Logout</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="hr">
+    </div>
+
+    <div class="container">
+        <div class="row">
+
+            <!-- left menu starts -->
+            <div class="col-sm-2 col-lg-2">
+                <div class="sidebar-nav">
+                    <div class="nav-canvas">
+                        <div class="nav-sm nav nav-stacked">
+                        </div>
+                        <ul class="nav nav-pills nav-stacked main-menu">
+                            <li class="nav-header">Main</li>
+                            <li>
+                                <a class="ajax-link" href="~/Admin/AddItem"><i class="glyphicon glyphicon-home"></i><span> Add New Item </span></a>
+                            </li>
+                            <li>
+                                <a class="ajax-link" href="~/Admin/UpdateItem"><i class="glyphicon glyphicon-eye-open"></i><span> View Items </span></a>
+                            </li>
+
+                            <li>
+                                <a class="ajax-link" href="~/Admin/UpdateAdmin"><i class="glyphicon glyphicon-list-alt"></i><span> View Users </span></a>
+                            </li>
+                            <li>
+                                <a class="ajax-link" href="~/Admin/Register"><i class="glyphicon glyphicon-font"></i><span> Add Admin </span></a>
+                            </li>
+
+                            <li>
+                                <a class="ajax-link" href="~/Admin/AddCategory"><i class="glyphicon glyphicon-font"></i><span>Add New Category</span></a>
+                            </li>
+
+
+                            <li>
+                                <a class="ajax-link" href="~/Admin/ViewCategories"><i class="glyphicon glyphicon-font"></i><span>View Categories</span></a>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+            <div class="col-sm-2 col-lg-10">
+                <div class="box-inner">
+                    <div class="box-header well" data-original-title="">
+                        <h2><i class="glyphicon glyphicon-edit"></i> Form Elements</h2>
+                        <div class="box-icon">
+                            <a href="#" class="btn btn-setting btn-round btn-default">
+                                <i class="glyphicon glyphicon-cog"></i>
+                            </a>
+                            <a href="#" class="btn btn-minimize btn-round btn-default">
+                                <i class="glyphicon glyphicon-chevron-up"></i>
+                            </a>
+                            <a href="#" class="btn btn-close btn-round btn-default">
+                                <i class="glyphicon glyphicon-remove"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="box-content">
+                        @*<form role="form" action="~/Admin/FinalUpdate">
+                            <div class="form-group">
+
+                                <label for="exampleInputEmail1"> Item Id</label>*@
+                        @using (Html.BeginForm("UpdateFinaly", "Admin", FormMethod.Post))
+                        {
+
+                            @Html.HiddenFor(x => x.Id)
+                            @Html.LabelFor(x => x.Name)
+                            @Html.EditorFor(x => x.Name)
+                            @Html.Label("Password")
+                            @Html.TextAreaFor(x => x.Password)
+                            
+                            @Html.HiddenFor(x => x.Email)
+                            @Html.Label("Contact")
+                            @Html.EditorFor(x => x.Contact)
+                            
+                            @Html.Label("Type")
+                            @Html.HiddenFor(x => x.Type)
+                            
+                            <button type="submit" class="btn btn-default">Update </button>
+                        }
+
+
+
+                        @*<input type="text" class="form-control" id="exampleInputEmail1" name="Id" value="@Model.Id" readonly>
+                            </div>
+                            <div class="form-group">
+
+                                <label for="exampleInputEmail1"> Item Name</label>
+
+                                <input type="text" class="form-control" id="exampleInputEmail1" name="Name" value="@Model.Name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Description</label>
+                                <input type="text" class="form-control" id="exampleInputPassword1" name="Description" value="@Model.Description" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Price</label>
+                                <input type="text" class="form-control" id="exampleInputPassword1" name="Price" value="@Model.Price" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Minimum Quantity</label>
+                                <input type="text" class="form-control" id="exampleInputPassword1" name="MinimumQuantity" value="@Model.MinimumQuantity" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Available Pieces</label>
+                                <input type="text" class="form-control" id="exampleInputPassword1" name="AvailablePieces" value="@Model.AvailablePieces" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Type</label>
+                                <input type="text" class="form-control" id="exampleInputPassword1" name="Type" value="@Model.Type" readonly>
+                            </div>*@
+
+                        @*<div class="form-group">
+                                <label for="exampleInputFile">Upload Image</label>
+                                <input type="file" id="exampleInputFile" required>
+
+                            </div>*@
+
+                        @*<button type="submit" class="btn btn-default">Update Item</button>
+                            </form>*@
+                    </div>
+                </div>
+            </div>
+            <!--/span-->
+        </div>
+
+    </div>
+
+
+    <!--/row-->
+    <!-- content ends -->
+    <!--/#content.col-md-0-->
+
+    <script src="~/Scripts/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- library for cookie management -->
+    <script src="~/Scripts/jquery.cookie.js"></script>
+    <!-- calender plugin -->
+    <script src='~/Scripts/bower_components/moment/min/moment.min.js'></script>
+    <script src='~/Scripts/bower_components/fullcalendar/dist/fullcalendar.min.js'></script>
+    <!-- data table plugin -->
+    <script src='~/Scripts/jquery.dataTables.min.js'></script>
+    <!-- select or dropdown enhancer -->
+    <script src="~/Scripts/bower_components/chosen/chosen.jquery.min.js"></script>
+    <!-- plugin for gallery image view -->
+    <script src="~/Scripts/bower_components/colorbox/jquery.colorbox-min.js"></script>
+    <!-- notification plugin -->
+    <script src="~/Scripts/jquery.noty.js"></script>
+    <!-- library for making tables responsive -->
+    <script src="~/Scripts/bower_components/responsive-tables/responsive-tables.js"></script>
+    <!-- tour plugin -->
+    <script src="~/Scripts/bower_components/bootstrap-tour/build/js/bootstrap-tour.min.js"></script>
+    <!-- star rating plugin -->
+    <script src="~/Scripts/jquery.raty.min.js"></script>
+    <!-- for iOS style toggle switch -->
+    <script src="~/Scripts/jquery.iphone.toggle.js"></script>
+    <!-- autogrowing textarea plugin -->
+    <script src="~/Scripts/jquery.autogrow-textarea.js"></script>
+    <!-- multiple file upload plugin -->
+    <script src="~/Scripts/jquery.uploadify-3.1.min.js"></script>
+    <!-- history.js for cross-browser state change on ajax -->
+    <script src="~/Scripts/jquery.history.js"></script>
+    <!-- application script for Charisma demo -->
+    <script src="~/Scripts/charisma.js"></script>
+
+</body>
+</html>
+
+
+
+

@@ -1,0 +1,202 @@
+﻿
+@using MvcApplication1.Models
+
+@{
+    Database1Entities2 de = new Database1Entities2();
+    List<Category> list = de.Categories.ToList();
+   
+}
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <title>PARAMOUNT Surgical Trading Co.</title>
+    <!-- CSS Files-->
+    
+    <link href="~/Content/style.css" rel="stylesheet" />
+    <link href="~/Content/responsive.css" rel="stylesheet" />
+    <link href="~/Content/skins/blue.css" rel="stylesheet" />
+    
+   
+</head>
+<body >
+   
+    <div id="panel">
+        <div class="row">
+            <div class="twelve columns">
+                <img src="~/images/info.png" class="pics" alt="info">
+                <div class="infotext">
+                    Thank you for visiting our site.
+                </div>
+            </div>
+        </div>
+    </div>
+    <p class="slide">
+        <a href="#" class="btn-slide"></a>
+    </p>
+
+    
+        <!-- HEADER
+        ================================================== -->
+        <div class="row">
+            <div class="headerlogo three columns">
+                <div class="logo">
+                    <a href="~/Home">
+                        <h2>Paramount</h2>
+                        <h5>Surgical Trading Co.</h5>
+
+                    </a>
+                </div>
+            </div>
+            <div class="headermenu nine columns noleftmarg">
+                <nav id="nav-wrap">
+                    <ul id="main-menu" class="nav-bar sf-menu">
+                        <li class="current">
+                            @Html.ActionLink("Home", "Index", "Home")
+
+                        </li>
+                        <li>
+                            <a style="font-size:medium">Categories</a>
+                            <ul>
+                                @foreach(var i in list)
+                                { 
+                                <li><a href="@Url.Action("Surgical", "Home", new { Type=@i.CategoryName})">@i.CategoryName</a></li>
+                                }
+                                
+
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="~/Home/About">About Us</a>
+
+                        </li>
+
+
+                        <li>
+                            <a href="~/Home/Contact">Contact</a>
+                        </li>
+
+                        @if(Session["User"]==null)
+                        { 
+                         
+                        <li>
+                            <a href="~/Admin/LogIn">Log In</a>
+                        </li>
+
+                        <li>
+                            <a href="~/Home/SignUp">Sign Up</a>
+                        </li>
+                        }
+                        else
+                        {
+                            User obj = (User)Session["User"];
+
+
+
+                            <li class="current">
+                                <a style="font-size:medium">@obj.Name</a>
+                                <ul>
+                                    <li><a href="@Url.Action("Profile", "Home", new {Id=obj.Id })">Profile</a></li>
+                                    <li><a href="~/Admin/SignOut">Sign Out</a></li>
+
+                                </ul>
+                            </li>
+
+
+
+                        <li>
+                            <a href="~/Home/SeeCart">My Cart</a>
+                        </li>
+                            
+                        }
+
+                        <li>
+                            <form class="navbar-search pull-left" action="~/Home/Search">
+                                <input placeholder="Search" class="search-query form-control col-md-10" name="Name"
+                                       type="text">
+
+
+                            </form>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="clear">
+        </div>
+
+
+       
+
+        @RenderBody()
+
+    
+        <!-- FOOOTER
+          ================================================== -->
+        <div id="footer"   >
+            <div class="row">
+            <footer >
+                <p class="back-top floatright" style="display:block">
+                    <a href="#top"><span></span></a>
+                </p>
+                <div class="six columns">
+                    <h1>ABOUT US</h1>
+                    Our goal is to keep our customers satisfied!
+                </div>
+                <div class="six columns">
+                    <h1>GET SOCIAL</h1>
+                    <a class="social facebook" target="_blank" href="https://www.facebook.com/"></a>
+                    @*<a class="social twitter" href="#"></a>*@
+                    @*<a class="social deviantart" href="#"></a>
+                        <a class="social flickr" href="#"></a>
+                        <a class="social dribbble" href="#"></a>*@
+                </div>
+                @*<div class="four columns">
+                        <h1 class="newsmargin">NEWSLETTER</h1>
+                        <div class="row collapse newsletter floatright">
+                            <div class="ten mobile-three columns">
+                                <input type="text" class="nomargin" placeholder="Enter your e-mail address...">
+                            </div>
+                            <div class="two mobile-one columns">
+                                <a href="#" class="postfix button expand">GO</a>
+                            </div>
+                        </div>
+                    </div>*@
+            </footer>
+        </div>
+            </div>
+        <div class="copyright">
+            <div class="row">
+                
+                <div class="six columns">
+                    &copy;<span class="small"> 2015-16 PARAMOUNT Surgical Trading Co.</span>
+                </div>
+                <div class="six columns">
+                    <span class="small floatright">Design by <a target="_blank" href="https://www.facebook.com/muhammadhassan.riaz/">Muhammad Hassan Riaz</a> </span>
+                </div>
+            </div>
+                </div>
+        </div>
+        <!-- JAVASCRIPTS
+        ================================================== -->
+        <!-- Javascript files placed here for faster loading -->
+    <script src="~/Scripts/foundation.min.js"></script>
+    <script src="~/Scripts/jquery.easing.1.3.js"></script>
+    <script src="~/Scripts/jquery.tweet.js"></script>
+    <script src="~/Scripts/elasticslideshow.js"></script>
+    <script src="~/Scripts/jquery.carouFredSel-6.0.5-packed.js"></script>
+    <script src="~/Scripts/jquery.cycle.js"></script>
+    <script src="~/Scripts/app.js"></script>
+    <script src="~/Scripts/modernizr.foundation.js"></script>
+    <script src="~/Scripts/slidepanel.js"></script>
+    <script src="~/Scripts/scrolltotop.js"></script>
+    <script src="~/Scripts/hoverIntent.js"></script>
+    <script src="~/Scripts/superfish.js"></script>
+    <script src="~/Scripts/responsivemenu.js"></script>
+</body>
+</html>
